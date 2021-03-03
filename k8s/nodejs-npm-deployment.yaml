@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodejs-npm
+  name: nodejs-npm-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-npm
+  # strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nodejs-npm
+    spec:
+      containers:
+      - image: lsilva.azurecr.io/nodejs-npm
+        name: nodejs-npm
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: regcred
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nodejs-npm
+  name: nodejs-npm-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nodejs-npm
+  type: LoadBalancer
