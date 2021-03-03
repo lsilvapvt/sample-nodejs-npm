@@ -1,0 +1,14 @@
+{
+  "author": "Tanzu Buildpacks",
+  "dependencies": {
+    "express": "^4.17.0"
+  },
+  "description": "Sample Node.js Application using NPM",
+  "license": "Apache-2.0",
+  "name": "sample",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsilvapvt/sample-nodejs-npm"
+  },
+  "version": "0.0.0"
+}
