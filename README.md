@@ -2,8 +2,8 @@
 
 Adapted from original code on https://github.com/paketo-buildpacks/samples/tree/main/nodejs/npm 
 
-1. Create a TBS image with source code from a git repository.
-
+1. Create a TBS image with source code from a git repository.  
+  
   Use either the imperative `kb` command:
 
     ```
@@ -15,11 +15,11 @@ Adapted from original code on https://github.com/paketo-buildpacks/samples/tree/
     --git-revision main 
     ```
 
-  OR the declarative `kubectl` definition files (see [kpack Image CRD specs](https://github.com/pivotal/kpack/blob/master/docs/image.md) ):
+  OR the declarative `kubectl` definition files (see [kpack Image CRD specs](https://github.com/pivotal/kpack/blob/master/docs/image.md)):
 
-    ```
-       kubectl apply -f ./tbs/nodejs-npm-image.yml
-    ```
+  ```
+    kubectl apply -f ./tbs/nodejs-npm-image.yml       
+  ```
 
     The Image instance with name `nodejs-npm` is created in the cluster and its first build instance is triggered to produce a container image and then save that to the registry provided with the `--tag` parameter.
 
